@@ -7,22 +7,22 @@ filter:    haml
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }
     %title= @page.title
-    %meta{ :name => "author", :content => "<%= @page.author %>" }
-    %link{ :href => "/css/blueprint/screen.css", :rel => "stylesheet", :media => "screen, projection", :type => "text/css" }
-    %link{ :href => "/css/blueprint/print.css", :rel => "stylesheet", :media => "print", :type => "text/css" }
-    /[if IE]
-      %link{ :href => "/css/blueprint/ie.css", :rel => "stylesheet", :media => "print", :type => "text/css" }
-    %link{ :href => "/css/coderay.css", :rel => "stylesheet", :type => "text/css" }
+    %meta{ :name => "author", :content => @page.author }
     %link{ :href => "/css/site.css", :rel => "stylesheet", :media => "screen, projection", :type => "text/css" }
   %body
-    .container
-      #header.column.span-20.prepend-2.append-2.first.last
+    #wrapper
+      #header
         %p.title
           A New Website
+        %ul#tabs
+          %li= link_to('Google', 'http://www.google.com')
+          %li= link_to('Google', 'http://www.google.com')
+          %li= link_to('Google', 'http://www.google.com')
+          %li= link_to('Google', 'http://www.google.com')
         %hr
-      .column.span-15.prepend-2.first
+      #content
         = @content
-      .column.span-5.append-2.last
+      #sidebar
         %h4
           Sidebar
         %p
@@ -36,7 +36,7 @@ filter:    haml
           Incremental leading
         %p.incr
           Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus.
-      #footer.column.span-20.prepend-2.append-2.first.last
+      #footer
         %hr
         %p
           This website was created with
