@@ -12,7 +12,7 @@ filter:    haml
   %body
     #wrapper
       #header
-        %p.title
+        %h2
           A New Website
         %ul#tabs
           %li= link_to('Google', 'http://www.google.com')
